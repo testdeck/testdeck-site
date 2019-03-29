@@ -1,5 +1,4 @@
 # testdeck-site
 
-WORK IN PROGRESS
-
+The testdeck site.
 

@@ -1,0 +1,38 @@
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+#
+# global site settings
+#
+title: testdeck 
+email: testdeck2@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: ""
+url: "https://testdeck.org"
+
+#
+# build settings
+#
+markdown: kramdown
+remote_theme: testdeck/testdeck-jekyll-theme@gh-1
+plugins:
+  - jekyll-feed
+  - jekyll-remote-theme
+
+#
+# excludes
+#
+exclude:
+  - README.md
+  - attic
+
+#
+# google custom search engine
+#
+gcse:
+  id: 010650276315653629951:v3s_qe8occu 
+  host: www.testdeck.org
+
