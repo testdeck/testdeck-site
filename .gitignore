@@ -3,3 +3,5 @@ _site
 .jekyll-metadata
 package-lock.json
 attic
+.*.swp
+.idea

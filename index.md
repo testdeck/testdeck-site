@@ -12,7 +12,22 @@ order: 0
       <img src="/assets/img/logo-square.svg">
     </div>
     <div class="tile is-child is-8">
-      <div class="content">{% include example-code.md %}</div>
+      <div class="content">
+{% highlight TypeScript linenos %}
+import { suite, test } from '@testdeck/mocha';
+import * as chai from 'chai';
+
+@suite
+class TestSuite {
+
+  @test
+  someTest() {
+
+    chai.assert.isOk(false);
+  }
+}
+{% endhighlight %}
+      </div>
     </div>
   </div>
 </div>
