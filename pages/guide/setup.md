@@ -4,10 +4,10 @@ section: guide
 role: page 
 order: 1
 toc: true
-title: Setting things up
+title: Setup
 label: Setup
 description: |
-  Setting things up
+  Testdeck Setup
 ---
 
 {:.toc}
@@ -74,8 +74,11 @@ Next, you need to choose which test framework you are going to use.
 Testdeck supports Mocha, Jasmine and Jest.
 
 With some limitations, you can always change the test framework later on. The most obvious limitations being the mocking
-framework and the assertion/expectation framework that you will use, which might or might not be compatible at the API level.
+framework and the assertion/expectation framework that you will use, which might or might not have a compatible API.
 
+We have collected an overview of the available assertion/expectation frameworks and also some of the available mocking 
+frameworks, so you can decide which route you will take in order to be able to migrate between test frameworks,
+provided that this is a valid use case for you.
 
 {:.toc}
 ## @testdeck/mocha
@@ -159,7 +162,7 @@ npm ERR! Test failed.  See above for more details.
 
 Alternatively, you can clone the existing <a href="https://github.com/testdeck/testdeck-mocha-seed">testdeck-mocha-seed</a> and start from there.
 
-There you also find information on how to enable test coverage using `nyc`.
+There you also find information on how to enable test coverage using [nyc](https://github.com/istanbuljs/nyc).
 
 
 {:.toc}
@@ -245,7 +248,7 @@ Executed 1 of 1 spec (1 FAILED) in 0.017 sec.
 
 Alternatively, you can clone the existing <a href="https://github.com/testdeck/testdeck-jasmine-seed">jasmine-seed</a> and start from there.
 
-There you also find information on how to enable test coverage using `nyc`.
+There you also find information on how to enable test coverage using [nyc](https://github.com/istanbuljs/nyc).
 
 
 {:.toc}
@@ -341,7 +344,8 @@ npm ERR! Test failed.  See above for more details.
 
 Alternatively, you can clone the existing <a href="https://github.com/testdeck/testdeck-jest-seed">jest-seed</a> and start from there.
 
-There you also find information on how to enable test coverage using built-in jest functionality.
+There you also find information on how to enable test coverage using built-in jest functionality, which is based on
+[nyc](https://github.com/istanbuljs/nyc).
 
 
 {:.toc}
