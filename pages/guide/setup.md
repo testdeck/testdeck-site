@@ -26,6 +26,10 @@ npm install --save-dev typescript tslint
 
 ### Add tsconfig.json
 
+The presented configuration is made so to get you started. You might want a more elaborated configuration for your own project.
+
+The experimentalDecorators setting, however, is required as Testdeck makes heavy use of these.
+
 {% highlight json linenos %}
 {
     "compilerOptions": {
@@ -39,6 +43,8 @@ npm install --save-dev typescript tslint
 {% endhighlight %}
 
 ### Add tslint.json
+
+The presented configuration is made so to get you started. You might want a more elaborated configuration for your own project.
 
 {% highlight json linenos %}
 {
