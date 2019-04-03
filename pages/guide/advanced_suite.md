@@ -16,7 +16,7 @@ description: |
 ## Suite Execution Options
 
 {% highlight TypeScript linenos %}
-import { suite, test } from '@testdeck/mocha';
+import { suite, test, slow, timeout } from '@testdeck/mocha';
 
 @suite(slow(4000))
 @timeout(4000)
@@ -43,7 +43,7 @@ class Suite {
 `slow` can be used as either a decorator or passed as a parameter to the `@suite` decorator.
 
 {% highlight TypeScript linenos %}
-import { suite, test } from '@testdeck/mocha';
+import { suite, test, slow } from '@testdeck/mocha';
 
 @suite(slow(2000))
 @slow(2000)
@@ -60,7 +60,7 @@ class Suite {
 `timeout` can be used as either a decorator or passed as a parameter to the `@suite` decorator.
 
 {% highlight TypeScript linenos %}
-import { suite, test } from '@testdeck/mocha';
+import { suite, test, timeout } from '@testdeck/mocha';
 
 @suite(timeout(2000))
 @timeout(2000)
