@@ -146,7 +146,7 @@ class Suite {
 
   private static k8sApi;
 
-  static before() {
+  static before(): Promise<any> {
     
     const kc = new k8s.KubeConfig();
     kc.loadFromDefault();
@@ -165,7 +165,7 @@ class Suite {
         // ... fire up some pods (kafka/zookeeper, microservice consumer/producer)
       }, (err) => {
       
-        throw err;
+        return Promise.reject(err);
       }
     );
   }
@@ -178,7 +178,7 @@ class Suite {
     // consume and test expected events from kafka topic
   }
 
-  static after() {
+  static after(): Promise<any> {
 
     const k8sApi = Suite.k8sApi;
     Suite.k8sApi = null;
@@ -197,7 +197,7 @@ class Suite {
         // ... 
       }, (err) => {
       
-        throw err;
+        return Promise.reject(err);
       }
     );
   }
