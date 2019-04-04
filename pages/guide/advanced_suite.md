@@ -91,10 +91,23 @@ class Suite {
 ## Pending Suites {% include support-all.html %}
 
 {% highlight TypeScript linenos %}
-import { suite } from '@testdeck/mocha';
+import { suite, test, pending } from '@testdeck/mocha';
 
 @suite.pending("a pending suite")
-class Suite {
+class PendingSuite {
+
+  @test
+  test() {
+  }
+}
+
+@suite
+@pending
+class AlsoPendingSuite {
+
+  @test
+  test() {
+  }
 }
 {% endhighlight %}
 
@@ -103,10 +116,19 @@ class Suite {
 ## Skipping Suites {% include support-all.html %}
 
 {% highlight TypeScript linenos %}
-import { suite, test } from '@testdeck/mocha';
+import { suite, test, skip } from '@testdeck/mocha';
 
 @suite.skip("a skipped suite")
-class Suite {
+class SkippedSuite {
+
+  @test
+  test() {
+  }
+}
+
+@suite
+@skip
+class AlsoSkippedSuite {
 
   @test
   test() {
@@ -119,10 +141,19 @@ class Suite {
 ## Focused Suites {% include support-all.html %}
 
 {% highlight TypeScript linenos %}
-import { suite, test } from '@testdeck/mocha';
+import { suite, test, only } from '@testdeck/mocha';
 
 @suite.only("a focused suite")
-class Suite {
+class FocusedSuite {
+
+  @test
+  test() {
+  }
+}
+
+@suite
+@only
+class AlsoFocusedSuite {
 
   @test
   test() {
