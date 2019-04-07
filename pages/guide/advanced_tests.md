@@ -123,6 +123,11 @@ class Suite {
 {:.toc}
 ## Pending Tests {% include support-all.html %}
 
+A test can be marked as pending.
+
+The `@pending` decorator takes an optional boolean parameter. That way one can make individual tests pending based on
+a given condition.
+
 {% highlight TypeScript linenos %}
 import { suite, test, pending } from '@testdeck/mocha';
 
@@ -137,12 +142,22 @@ class Suite {
   @pending
   alsoPending() {
   }
+  
+  @test
+  @pending(isCondition)
+  conditionallyPending() {
+  }
 }
 {% endhighlight %}
 
 
 {:.toc}
 ## Skipping Tests {% include support-all.html %}
+
+A test can be marked for being skipped.
+
+The `@skip` decorator takes an optional boolean parameter. That way one can make individual tests skip based on
+a given condition.
 
 {% highlight TypeScript linenos %}
 import { suite, test, skip } from '@testdeck/mocha';
@@ -158,12 +173,22 @@ class Suite {
   @skip
   alsoSkipped() {
   }
+  
+  @test
+  @skip(isCondition)
+  conditionallySkipped() {
+  }
 }
 {% endhighlight %}
 
 
 {:.toc}
 ## Focused Tests {% include support-all.html %}
+
+A test can be marked as focused.
+
+The `@only` decorator takes an optional boolean parameter. That way one can make individual focused based on
+a given condition.
 
 {% highlight TypeScript linenos %}
 import { suite, test, only } from '@testdeck/mocha';
@@ -178,6 +203,11 @@ class Suite {
   @test
   @only
   alsoFocused() {
+  }
+  
+  @test
+  @only(isCondition)
+  conditionallyFocused() {
   }
 }
 {% endhighlight %}
