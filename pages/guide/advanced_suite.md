@@ -90,6 +90,11 @@ class Suite {
 {:.toc}
 ## Pending Suites {% include support-all.html %}
 
+A suite can be marked as pending. A pending suite, without any tests will not show up in the report.
+
+The `@pending` decorator takes an optional boolean parameter. That way one can make individual suites pending based on
+a given condition.
+
 {% highlight TypeScript linenos %}
 import { suite, test, pending } from '@testdeck/mocha';
 
@@ -109,11 +114,25 @@ class AlsoPendingSuite {
   test() {
   }
 }
+
+@suite
+@pending(isCondition)
+class ConditionallyPendingSuite {
+
+  @test
+  test() {
+  }
+}
 {% endhighlight %}
 
 
 {:.toc}
 ## Skipping Suites {% include support-all.html %}
+
+A suite can be marked as skipped. A skipped suite, without any tests will not show up in the report.
+
+The `@skip` decorator takes an optional boolean parameter. That way one can make individual suites skip based on
+a given condition.
 
 {% highlight TypeScript linenos %}
 import { suite, test, skip } from '@testdeck/mocha';
@@ -134,11 +153,26 @@ class AlsoSkippedSuite {
   test() {
   }
 }
+
+@suite
+@skip(isCondition)
+class ConditionallySkippedSuite {
+
+  @test
+  test() {
+  }
+}
+
 {% endhighlight %}
 
 
 {:.toc}
 ## Focused Suites {% include support-all.html %}
+
+A suite can be marked as focused. A focused suite, without any tests will not show up in the report.
+
+The `@only` decorator takes an optional boolean parameter. That way one can make individual suites focused based on
+a given condition.
 
 {% highlight TypeScript linenos %}
 import { suite, test, only } from '@testdeck/mocha';
@@ -154,6 +188,15 @@ class FocusedSuite {
 @suite
 @only
 class AlsoFocusedSuite {
+
+  @test
+  test() {
+  }
+}
+
+@suite
+@only(isCondition)
+class ConditionallyFocusedSuite {
 
   @test
   test() {
