@@ -15,7 +15,7 @@ url: "https://testdeck.org"
 # build settings
 #
 markdown: kramdown
-remote_theme: testdeck/testdeck-jekyll-theme@gh-1
+remote_theme: testdeck/testdeck-jekyll-theme
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
