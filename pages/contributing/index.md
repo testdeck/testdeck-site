@@ -5,8 +5,10 @@ role: index
 order: 3
 label: Contributing
 description: |
-  Everything about contributing
+  Contributing to testdeck
 ---
 
-This is the contributing section 
+## Contributing
+
+See the available guides for more information.
 
