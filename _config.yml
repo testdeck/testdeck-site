@@ -4,10 +4,10 @@
 #
 # global site settings
 #
-title: testdeck 
+title: testdeck
 email: testdeck2@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Testdeck - Your one stop solution for object oriented testing with Mocha, Jasmine or Jest
+  Your one stop solution for object oriented testing with Mocha, Jasmine or Jest
 baseurl: ""
 url: "https://testdeck.org"
 
@@ -15,7 +15,7 @@ url: "https://testdeck.org"
 # build settings
 #
 markdown: kramdown
-remote_theme: testdeck/testdeck-jekyll-theme
+remote_theme: testdeck/testdeck-jekyll-theme@adhoc-tests
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
@@ -29,8 +29,8 @@ exclude:
 
 #
 # google custom search engine
+# https://cse.google.com/cse/setup/basic?cx=010650276315653629951:v3s_qe8occu
 #
 gcse:
-  id: 010650276315653629951:v3s_qe8occu 
-  host: www.testdeck.org
-
+  id: 010650276315653629951:v3s_qe8occu
+  host: testdeck.org
