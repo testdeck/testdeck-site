@@ -13,9 +13,10 @@ description: |
 {:.toc}
 ## Tests
 
-With `Testdeck` you author tests by decorating methods of your suite with the `@test` decorator.
+With `testdeck` you author tests by decorating methods of your suite with the `@test` decorator.
 
-By using [inheritance](/pages/guide/inheritance#simple-inheritance) you are also able to inherit common tests for a family of SUTs.
+And when using [inheritance](/pages/guide/inheritance#simple-inheritance) you are also able to inherit common tests 
+for a family of SUTs.
 
 
 {:.toc}
@@ -59,6 +60,9 @@ npm test
 {:.toc}
 ## Asynchronous Tests
 
+As with [chaining of asynchronous lifecycle hooks](/pages/guide/inheritance#static-lifecycle-hook-chaining), writing 
+asynchronous tests is also somewhat more inclined.
+
 
 {:.toc}
 ### Callback Style
@@ -67,22 +71,37 @@ npm test
 import { suite, test } from '@testdeck/mocha';
 import { assert } from 'chai';
 
+function asyncSUT(cb) {
+
+  setTimeout(() => cb(null, false), 100);
+}
+
 @suite
 class Suite {
 
   @test
   test(done) {
 
-    setTimeout(() => {
-    
-      try {
-      
-        assert.isOk(false);
-      } catch (err) {
-      
-        done(err);
+    asyncSUT((err, res) => {
+
+      if (err) {
+
+        // expected error testing anyone?
+        return done(err);
       }
-    }, 100);  
+
+      try {
+
+        assert.isOk(res);
+
+        return done();
+      } catch (ex) {
+
+        // we want the test to fail with the assertion error and not just due
+        // to some timeout because done was not called back in time
+        return done(ex);
+      }
+    });
   }
 }
 {% endhighlight %}
@@ -114,23 +133,24 @@ npm test
 import { suite, test } from '@testdeck/mocha';
 import { assert } from 'chai';
 
+function asyncSUT(): Promise<any> {
+
+  return Promise.resolve(false);
+}
+
 @suite
 class Suite {
 
   @test
   test() {
 
-    return new Promise((resolve, reject) => {
-
-      try {
-      
-        assert.isOk(false);
-        
-        resolve(null);
-      } catch (err) {
-      
-        reject(err);
-      }
+    return asyncSUT().then((res) => {
+    
+      assert.isOk(res);
+    }, (err) => {
+    
+      // expected error testing anyone?
+      // ...
     });  
   }
 }
@@ -163,24 +183,32 @@ npm test
 import { suite, test } from '@testdeck/mocha';
 import { assert } from 'chai';
 
+async function asyncSUT(): Promise<any> {
+
+  return Promise.resolve(false);
+}
+
 @suite
 class Suite {
 
   @test
   async test() {
 
-    return new Promise((resolve, reject) => {
+    let res;
+    
+    try {
+    
+      res = await asyncSUT();
+    } catch (ex) {
 
-      try {
-      
-        assert.isOk(false);
-        
-        resolve(null);
-      } catch (err) {
-      
-        reject(err);
-      }
-    });  
+      // expected exception testing anyone?    
+      // ...
+      return;
+    }
+
+    // we would not want to run these assertions in above try because otherwise we would 
+    // have to filter them or use a nested try/catch/rethrow
+    assert.isOk(res);
   }
 }
 {% endhighlight %}
