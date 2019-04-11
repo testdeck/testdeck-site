@@ -87,7 +87,7 @@ order: 0
 
 ## Contributors
 
-And are the guys and gals, trees and cats and ..., who have contributed to `testdeck` and `mocha-typescript` in the past.
+And here are the guys and gals, trees and cats and ..., who have contributed to `testdeck` and `mocha-typescript` in the past.
 
 And while it may seem that projects on GitHub sometimes seem to be run by [automatons](https://en.wikipedia.org/wiki/Automaton),
 this is definitely not the case.
