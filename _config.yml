@@ -28,9 +28,11 @@ exclude:
   - attic
 
 #
+# currently disabled due to cookie regulations
+#
 # google custom search engine
 # https://cse.google.com/cse/setup/basic?cx=010650276315653629951:v3s_qe8occu
 #
-gcse:
-  id: 010650276315653629951:v3s_qe8occu
-  host: testdeck.org
+#gcse:
+#  id: 010650276315653629951:v3s_qe8occu
+#  host: testdeck.org
