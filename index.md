@@ -17,8 +17,8 @@ order: 0
             <p>testdeck is a decorator based wrapper around your favourite <em>JavaScript</em> test framework.</p>
             <p>With testdeck, you can write your tests object-orientedly, effectfully making use of 
             <a href="/pages/guide/inheritance">inheritance</a> to encapsulate test suite behaviour.</p>
-            <p>testdeck also supports browser based testing using for example <em>Karma</em>.</p>
-            <p>testdeck also makes no assumptions on the 
+            <p>testdeck supports browser based testing using for example <em>Karma</em>.</p>
+            <p>testdeck makes no assumptions on the 
             <a href="/pages/guide/setup#assertionexpectation-frameworks">assertion/expectation frameworks</a>
             that you want to use.</p>
             <p>testdeck is also the official successor of <em>mocha-typescript</em>, so if you have been using that before,
@@ -37,15 +37,15 @@ order: 0
     <div class="tile is-vertical is-6">
       <div class="tile is-parent">
         <div class="tile is-child">
-          <div class="title">Not Limited to Just <em>TypeScript</em></div>
+          <div class="title">No Limits</div>
           <div class="content">
-            <p>While testdeck was written using <em>TypeScript</em>, it can be used with also Babel or any other transpiled
-            language that features support for <em>JavaScript</em> decorators.</p>
-            <p>We are currently in the process of compiling multiple example projects, called seeds, that you can find
+            <p>While testdeck was written using <em>TypeScript</em>, it can be used with also <em>Babel</em> or any other transpiled
+            language that features support for <em>decorators</em>.</p>
+            <p>We have compiled for you multiple example projects, called seeds, that you can find
             on <a href="https://github.com/search?q=testdeck-*-seed">GitHub</a>.</p>
-            <p>So check these out to find out more about how to integrate <em>testdeck</em> with for example <em>Babel</em>.</p>
-            <p>And if you need more examples, feel free to <a href="/pages/contributing/reporting#feature-requests">issue a feature request</a>
-            or even provide us with an example of your own.</p>
+            <p>Check these out to find out more about how to integrate <em>testdeck</em> with your existing technology stack.</p>
+            <p>And if you need more seeds, feel free to <a href="/pages/contributing/reporting#feature-requests">issue a feature request</a>
+            or even provide us with a seed of your own.</p>
           </div>
         </div>
       </div>
