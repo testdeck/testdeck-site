@@ -2,7 +2,7 @@
 layout: guide
 section: guide
 role: page
-order: 30
+order: 80
 toc: true
 title: Test Context
 label: Test Context
@@ -13,19 +13,17 @@ description: |
 {:.toc}
 ## Test Context
 
-For functional mocha tests, test and suite contexts are passed through the `this` to the test and suite functions.
-
-In `@testdeck/mocha` these are available on the class and instance objects, assigned on a `context` symbol.
-
-Here is how to access them:
-
+For functional mocha tests, the test and suite functions get a context passed as `this`. To obtain it in `@testdeck/mocha`, use the `context` symbol as follows:
 {% highlight TypeScript lineos %}
-mport { suite, test, context } from "@testdeck/mocha";
+import { suite, test, context } from "@testdeck/mocha";
 
-@suite class SuiteContext {
+@suite
+class SuiteContext {
+
     static async before() {
         this[context].timeout(50);
     }
+
     @test
     testHasContext(done) {
         this[context].timeout(50);
